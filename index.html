@@ -1,0 +1,152 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover"
+    >
+    <title>Uugguu Combo Tracker</title>
+    <link rel="stylesheet" href="style.css">
+  </head>
+
+  <body>
+    <header>
+      <h1>Uugguu Combo Tracker</h1>
+    </header>
+
+    <main>
+      <section class="panel">
+        <h2>Uugguu on the battlefield</h2>
+
+        <div class="row">
+          <div class="stat">
+            <small>Original Uugguu</small>
+            <div class="row spread">
+              <button class="small" id="origMinus">−</button>
+              <span class="num" id="original">1</span>
+              <button class="small" id="origPlus">+</button>
+            </div>
+          </div>
+
+          <div class="stat">
+            <small>Nontoken Uugguu copies</small>
+            <div class="row spread">
+              <button class="small" id="copyMinus">−</button>
+              <span class="num" id="uCopies">0</span>
+              <button class="small" id="copyPlus">+</button>
+            </div>
+          </div>
+
+          <div class="stat">
+            <small>Uugguu token copies</small>
+            <div class="row spread">
+              <button class="small" id="uMinus">−</button>
+              <span class="num" id="uTokens">0</span>
+              <button class="small" id="uPlus">+</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="row" style="margin-top:10px">
+          <div class="stat">
+            <small>Total Uugguus</small>
+            <div class="num" id="uTotal">1</div>
+          </div>
+
+          <div class="stat">
+            <small>Blue devotion from Uugguus</small>
+            <div class="num" id="uDevotion">1</div>
+          </div>
+        </div>
+
+        <div class="row" style="margin-top:10px">
+          <button class="primary" id="uugDies">Original Uugguu dies</button>
+          <button id="legendDies">Uugguu dies to legend rule</button>
+          <button class="danger" id="wipe">Non-exile board wipe</button>
+        </div>
+
+        <p id="deathResult" class="section-note">Death results will appear here.</p>
+      </section>
+
+      <section class="panel">
+        <h2>Gladewalker Ritualist</h2>
+
+        <div class="field">
+          <label for="ritualists">Ritualists already on board before the pairs enter</label>
+          <input type="number" id="ritualists" min="0" step="1" value="0">
+        </div>
+
+        <p class="section-note" id="ritualistPairsNote">
+          Pairs created: 1 (based on your current Uugguu count)
+        </p>
+
+        <div class="stat" style="margin-top:10px">
+          <small>Total cards drawn</small>
+          <div class="num" id="ritualistTotal">72</div>
+          <div id="ritualistBreakdown" class="section-note">
+            Pair 1: 2 · Pair 2: 6 · Pair 3: 10 · Pair 4: 14 · Pair 5: 18 · Pair 6: 22
+          </div>
+        </div>
+      </section>
+
+      <section class="panel wide">
+        <h2>Track other creature tokens</h2>
+
+        <div class="row">
+          <div class="field">
+            <label for="cardName">Creature card name</label>
+            <input id="cardName" type="text" placeholder="e.g. Gladewalker Ritualist">
+          </div>
+
+          <div style="align-self:end">
+            <button class="primary" id="addCreature">Search &amp; add</button>
+          </div>
+        </div>
+
+        <p id="searchStatus" class="section-note"></p>
+
+        <div class="row" style="margin-top:8px">
+          <button id="manualAdd">Add name without Scryfall</button>
+        </div>
+
+        <div id="creatures"></div>
+      </section>
+
+      <section class="panel">
+        <h2>Thassa's Oracle / devotion</h2>
+
+        <div class="row">
+          <div class="stat">
+            <small>Blue devotion from tracked creatures</small>
+            <div class="num" id="otherDevotion">0</div>
+          </div>
+
+          <div class="stat">
+            <small>Oracle's own blue pips</small>
+            <div class="num">2</div>
+          </div>
+        </div>
+
+        <div class="field" style="margin-top:10px">
+          <label for="extraDevotion">Other blue devotion not tracked here</label>
+          <input id="extraDevotion" type="number" min="0" step="1" value="0">
+        </div>
+
+        <div class="row" style="margin-top:10px">
+          <div class="stat">
+            <small>Estimated total devotion with Oracle</small>
+            <div class="num" id="totalDevotion">3</div>
+          </div>
+        </div>
+      </section>
+
+      <div class="reset-area">
+        <button class="danger small" id="resetAll">Reset tracker</button>
+      </div>
+    </main>
+
+    <script src="script.js" defer></script>
+  </body>
+</html>
+
